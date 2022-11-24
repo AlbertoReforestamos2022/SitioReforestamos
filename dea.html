@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Reforestamos Mexico A.C.">
+    <meta name="author" content="Reforestamos Mexico A.C.">
+    <meta name="generator" content="Alberto CM">
+    <title>Detectives Ambientales</title>
+    <link rel="shortcut icon" href="dea/img/LOGO PRINCIPAL.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/estilos.css">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- Silider -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+
+  <style>
+    body {
+        padding: 0;
+    }
+
+    .donacion__main .donacion__icono  {
+        background: #fff;
+        color: #036935;
+        padding: 15px;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    }
+
+    .logo__dea {
+        margin-left: 30px;
+    }
+
+    .doctos__interes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-right: 30px;
+    }
+    
+    .doctos__interes a {
+        font-family: 'Rubik Dirt', cursive;
+        text-decoration: none;
+        color: #036935!important;
+        margin-bottom: 5px;
+        font-size: 2rem;
+    }
+
+    @media (min-width: 300px) and (max-width: 900px) {
+        .donacion__icono svg {
+            margin-right: 30px;
+        }
+
+        .donacion__icono .link {
+            display: none;
+        }
+
+        .dea__info {
+            margin: 10px auto;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .dea__info  {
+            margin: 40px auto;
+        }
+    }
+
+
+    .titulo {
+        color: #036935!important;
+    }
+
+    .inicio__dea{
+        margin-top: 100px;
+        background: linear-gradient(90deg, #036935 , #036935, #036935, #036935) !important;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    }
+
+    .dea__video video{
+        margin: 50px auto;
+        display: flex;
+        justify-content: center;
+        border-radius: 15px;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    }
+
+    .inicio__dea__general {
+        display: flex;
+        justify-content: center;
+    }
+
+    .dea__info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        color: #fff;
+        font-size: 25px;
+        line-height: 2;
+    }
+
+    .dea__info .boton__saber__mas {
+        padding: 10px 30px;
+        text-decoration: none;
+        border: 2px solid #fff;
+        color: #fff;
+        font-size: 20px;
+        border-radius: 5px;
+        transition: background .2s;
+    }
+
+    .dea__info .boton__saber__mas:hover {
+        background-color: #fff;
+        color: #036935;
+    }
+
+    .encabezado__notas {
+        font-family: 'Rubik Dirt', cursive;
+        color: #036935;
+        text-align: center;
+    }
+
+    .notas__principales {
+        padding: 10px;
+    }
+
+    .nota {
+        height: 350px;
+        background-image: linear-gradient(rgba(38, 64, 64, .3), rgba(38, 64, 64, .3)), url(img/montanas.jpg);  padding: 0.1px; 
+        color: #fff; 
+        padding: 20px; 
+        border-radius: 10px; 
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+        display: flex;
+        align-items: flex-end;
+        transition: transform .2s;
+    }
+
+    .nota:hover {
+        transform: scale(.96);
+        cursor: pointer;
+    }
+
+    .nota .nota__img img {
+        border-radius: 5px;
+    }
+
+    .nota .nota__info {
+        margin-top: 80px;
+    }
+
+    .copy {
+        color: #036935!important;
+    }
+
+  </style>
+
+  <body>
+    <div class="bot"></div>
+  <!-- Navegación -->  
+    <main>
+    <!-- Navegación Donación-->
+    <nav class="fixed-top donacion__main shadow-none">
+        <div class="donacion__icono navbar-brand">
+
+            <div class="logo__dea">
+                <a href="#"><img src="dea/img/LOGO PRINCIPAL.png" width="150" alt="Detecives Ambientales"></a>
+            </div>
+
+            <div class="doctos__interes">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-file-earmark-check" viewBox="0 0 16 16">
+                    <path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                    </svg>
+                    <a href="#" class="doctos__interes verde-rm link ms-2">Documentos</a>
+            </div>
+        </div>
+        </div>
+    </nav><!-- /.Navegación Donación-->
+
+    </main>
+  <!-- /.Navegación Principal  -->
+
+<!-- Contenido  logo, fondo verderm, videotik-tok, doctos interes -->
+
+    <section class="inicio__dea">
+        <div class="container">
+            <div class="inicio__dea__general row row-cols-md-2">
+                <div class="col-12 dea__video" data-aos="fade-right" data-aos-duration="2000">
+                    <video  class="" src="dea/img/dea_video.mp4" height="500" autoplay muted preload="auto" loop></video>
+                </div>
+    
+                <div class="col-12 dea__info" data-aos="fade-left" data-aos-duration="2000">
+                    <h3>Detectives Ambientales genera información de carácter científico al capacitar a la sociedad para observar e identificar árboles, aves e insectos y construir un registro fotográfico de especies en zonas urbanas.</h3>
+
+                    <a href="#" class="boton__saber__mas"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-binoculars" viewBox="0 0 16 16">
+                            <path d="M3 2.5A1.5 1.5 0 0 1 4.5 1h1A1.5 1.5 0 0 1 7 2.5V5h2V2.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5v2.382a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V14.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 14.5v-3a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5v3A1.5 1.5 0 0 1 5.5 16h-3A1.5 1.5 0 0 1 1 14.5V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882V2.5zM4.5 2a.5.5 0 0 0-.5.5V3h2v-.5a.5.5 0 0 0-.5-.5h-1zM6 4H4v.882a1.5 1.5 0 0 1-.83 1.342l-.894.447A.5.5 0 0 0 2 7.118V13h4v-1.293l-.854-.853A.5.5 0 0 1 5 10.5v-1A1.5 1.5 0 0 1 6.5 8h3A1.5 1.5 0 0 1 11 9.5v1a.5.5 0 0 1-.146.354l-.854.853V13h4V7.118a.5.5 0 0 0-.276-.447l-.895-.447A1.5 1.5 0 0 1 12 4.882V4h-2v1.5a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V4zm4-1h2v-.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5V3zm4 11h-4v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V14zm-8 0H2v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V14z"/>
+                          </svg>
+                          Saber Más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Blog Reforestamos México  -->
+    <section class="container-xl pt-5"> 
+      <div class="">      
+        <h1 class="encabezado__notas">Notas de Interés</h1>
+      </div>
+      <div class="row mt-4" style="margin-top: 100px;">
+
+        <div class="notas__principales col-md-6 col-lg-3">
+            <div class="nota">
+                <div class="nota__info card-body">
+                    <p class="nota__fecha card-text fw-bold">10 de Diciembre</p>
+                    <h3 class="nota__titulo card-title fs-5">Los lugares comunes. Algunas reflexiones a partir de la participación en el World Justice Forum</h3>
+                    <p class="nota__texto card-text descripcion">Lorem ipsum dolor sit amet consect etur adipisicing elit</p>
+                </div>
+            </div>
+        </div> <!--.col-->
+  
+        <div class="notas__principales col-md-6 col-lg-3">
+            <div class="nota">
+                <div class="nota__info card-body">
+                    <p class="nota__fecha card-text fecha fw-bold">10 de Diciembre</p>
+                    <h3 class="nota__titulo card-title fs-5">Mejores Alianzas, Mejores Bosques</h3>
+                    <p class="nota__texto card-text descripcion">Lorem ipsum dolor sit amet consect etur adipisicing elit</p>
+                </div>
+            </div>
+        </div> <!--.col-->
+  
+        <div class="notas__principales col-md-6 col-lg-3">
+            <div class="nota">
+                <div class="nota__info card-body">
+                    <p class="nota__fecha card-text fecha fw-bold">10 de Diciembre</p>
+                    <h3 class="nota__titulo card-title fs-5">Ciudades verdes y resilientes</h3>
+                    <p class="nota__texto card-text descripcion">Lorem ipsum dolor sit amet consect etur adipisicing elit</p>
+                </div>
+            </div>
+        </div> <!--.col-->
+  
+        <div class="notas__principales col-md-6 col-lg-3">
+            <div class="nota">
+                <div class="nota__info card-body">
+                    <p class="nota__fecha card-text fecha fw-bold">10 de Diciembre</p>
+                    <h3 class="nota__titulo card-title fs-5">Ciudades verdes y resilientes</h3>
+                    <p class="nota__texto card-text descripcion">Lorem ipsum dolor sit amet consect etur adipisicing elit</p>
+                </div>
+            </div>
+        </div> <!--.col-->
+      </div>
+    </section><!-- ./ Blog Reforestamos México  -->
+
+
+  <!-- footer -->
+  <hr class="featurette-divider">
+  <footer class="container-xl">
+
+    <div class="d-flex align-items-center flex-column">
+      <p class="copy">&copy; Detectives Ambientales</p>
+    </div>
+  </footer>
+  <!-- /.footer-->
+<!-- /.Contenido -->
+
+      <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+      <script>
+        $(".sitiosInteres").owlCarousel({
+          margin: 10,
+          loop: true,
+          autoplay: true,
+          uatoplayTimeout: 2000,
+          autoplayHoverPause: true,
+          responsive: {
+            0: {
+              items: 2,
+              nav: false
+            }, 
+            600: {
+              items: 3,
+              nav: false
+            },
+            1000: {
+              items: 5,
+              nav:false
+            }
+          }
+        })
+      </script>
+
+  </body>
+</html>
+
