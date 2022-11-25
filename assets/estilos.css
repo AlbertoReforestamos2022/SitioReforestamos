@@ -167,6 +167,21 @@ footer .aviso__privacidad {
   text-decoration: none!important;
 }
 
+.contenedor-responsivo {
+  position: relative!important;
+  overflow: hidden!important;
+  padding-top: 56.25%!important;
+}
+
+.iframe-responsivo {
+  position: absolute!important;
+  top: 0!important;
+  left: 0!important;
+  border: none!important;
+  width: 100%!important;
+  height: 100%!important;
+}
+
 
 .contenido-principal {
   margin-top: 120px;
@@ -707,7 +722,7 @@ a.active {
 }
 
 .nota .nota__img img:hover {
-  transform: scale(1.5);
+  transform: scale(1.1);
 }
 
 .nota__info {
