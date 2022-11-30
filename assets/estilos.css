@@ -270,9 +270,7 @@ body {
   color: var(--verdeClaro);
 }
 
-.card {
-  border: none!important;
-}
+
 
 /* ------------------------------------ Menú REFORESTAMMOS MX --------------------------------- */
 .menu {
@@ -1331,10 +1329,12 @@ a.active {
       transition: color .5s;
     }
 
+/*
     .donar:hover, .adopta:hover, .boletin:hover {
       color: var(--rojoReforestamos);
       cursor: pointer;
     }
+*/
 
     /* Encabezado Incendios */
     .incendios-titulo{
@@ -1450,9 +1450,9 @@ a.active {
     /* card incendios forestales */
     .cuenta__card {
       /* background: linear-gradient(15deg ,#ec432c,#FF5370); */
-      color: var(--rojoReforestamos);
+      color: var(--blanco);
       box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-      border: solid var(--rojoReforestamos);
+      border: solid var(--blanco);
       text-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
       text-align: center;
       padding: 20px;

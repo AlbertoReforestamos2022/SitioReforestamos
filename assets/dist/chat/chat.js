@@ -108,7 +108,7 @@
         /** Contenedores principales div */
         // Contendor principal .container__chat 
         const containerChat = document.createElement('div');
-        containerChat.classList.add('container__chat');
+        containerChat.classList.add('container__chat', 'chat');
         containerChat.setAttribute('id', 'chat');
         // .chat-header
         const chatHeader = document.createElement('div');
@@ -168,38 +168,39 @@
         listaParrafos(chatInfo);
         
         // .lista
-        const ulLista = document.createElement('ul')
-        ulLista.classList.add('lista', 'list-unstyled', 'm-0');
+        const opcionesContent = document.createElement('div')
+        opcionesContent.classList.add('container', 'lista', 'm-0');
+        const rowOpciones = document.createElement('div'); // div.row
+        rowOpciones.classList.add('row','justify-content-center')
 
-        chatBody.appendChild(ulLista);
+        opcionesContent.appendChild(rowOpciones);
+        chatBody.appendChild(opcionesContent);
         const listaopciones = (f) => {
-
-        /** 
-            let contenido; 
-            let li;
-            for(let i=0; i < listaOpciones.length; i++ ){
-            li = document.createElement('li');
-            contenido = listaOpciones[i].numero + "  " + listaOpciones[i].opcion;
-            li.appendChild(document.createTextNode(contenido));
-            ulLista.appendChild(li);
-            }
-        */
 
             listaOpciones.forEach(listaOpcion => {
                 const {numero, opcion} = listaOpcion;
-                const opcionHTML = document.createElement('li');
+                const colOpciones = document.createElement('div');// div.col
+                colOpciones.classList.add('col-12');
+                const opcionDiv = document.createElement('div');
+                opcionDiv.classList.add('opcion-content')
+                const btnOpcion = document.createElement('a');
+                btnOpcion.setAttribute('href', '#')
+                btnOpcion.classList.add(`btn-opcion-${numero}`);
 
-                opcionHTML.textContent = `
+                btnOpcion.textContent = `
                 ${numero}: ${opcion}
                 `;
-                ulLista.appendChild(opcionHTML);
+                
+                opcionDiv.appendChild(btnOpcion);
+                colOpciones.appendChild(opcionDiv);
+                rowOpciones.appendChild(colOpciones);
+                return;
             })
-
             return f;
-
         }
-        listaopciones(chatBody);
-        chatInfo.appendChild(ulLista);
+
+        listaopciones(chatBody).scrollIntoView();
+        chatInfo.appendChild(opcionesContent);
 
 
 
@@ -219,6 +220,8 @@
         // input
         const inputResponse = document.createElement('input');
         inputResponse.setAttribute('type', 'number');
+        inputResponse.setAttribute('min', '1');
+        inputResponse.setAttribute('max', '9');        
         inputResponse.setAttribute('id', 'txtInput');
         inputResponse.setAttribute('maxlength', '3');
         inputResponse.setAttribute('placeholder', 'Escribe un número');        
@@ -265,8 +268,7 @@
         
         glove.addEventListener('click', glovechat => {
             const addChat = document.querySelector('#chat');
-            glovechat.preventDefault(); 
-        
+            glovechat.preventDefault();
             addChat.style.display = block;
             
             if(addChat.style.display = block){
@@ -277,7 +279,6 @@
                 options.classList.remove(displayNone);
                 options.classList.add(displayBlock);
             },1000)
-        
         })
         
         salir.addEventListener('click', event =>{
@@ -296,18 +297,24 @@
     }
     animationContainer();
 
+
+
     /** Chat Response */
     const chatResponse = () => {
         const chatBody = document.querySelector(".chat-body");
         const txtInput = document.querySelector("#txtInput");
         const send = document.querySelector(".send");
         
-        send.addEventListener("click", () => renderUserMessage());
+        send.addEventListener("click", () => {
+            return txtInput.value!=="" 
+            ? renderUserMessage() 
+            : false;
+        });
         
         txtInput.addEventListener("keyup", (event) => {
-          if (event.keyCode === 13) {
-            renderUserMessage();
-          }
+            return event.keyCode === 13 && txtInput.value!=="" 
+            ? renderUserMessage() 
+            : false;
         });
         
         const renderUserMessage = () => {
@@ -330,6 +337,7 @@
           if (type !== "user") {
             className = "chatbot-message";
           }
+
           const messageEle = document.createElement("div");
           const txtNode = document.createTextNode(txt);
           messageEle.classList.add(className);
