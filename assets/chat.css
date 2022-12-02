@@ -17,8 +17,8 @@
   color: var(--blanco);
   background: var(--blanco);
   position: fixed;
-  bottom: 90px;
-  right: 0;
+  bottom: 60px;
+  right: 10px;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
   border-radius: 15px;
   z-index: 1032;
@@ -34,12 +34,12 @@
 }
 
 .chat__glove {
+  right: 40px;
   width: 70px; 
   height: 70px; 
   border-radius: 50px; 
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15); 
   background: var(--verdeClaro);
-  margin-right: 40px;
 }
 
 @media (min-width: 300px) and (max-width: 900px) {
@@ -163,7 +163,7 @@
 
 .send {
   flex: 1;
-  margin: 15px 20px;
+  margin: 15px;
   margin-bottom: 10px;
   color: #036935;
 }
@@ -214,14 +214,12 @@
 }
 
 .opcion-content {
-  width: 100%;
   margin: 10px;
   padding: 10px;
   background-color: var(--verdeRm);
 }
 
 .opcion-content a {
-  padding: 15px;
   color: var(--blanco);
   text-decoration: none;
 }
