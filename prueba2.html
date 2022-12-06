@@ -116,7 +116,7 @@
           padding: 2px;
       }
 
-      @media (min-width: 300px) and (max-width: 700px) {
+      @media (min-width: 300px) and (max-width: 900px) {
         .nav__contacto {
           display: grid;
           grid-template-columns: repeat(1, 1fr);
@@ -141,6 +141,158 @@
           margin-right: 8px;
         }
       }
+
+      /* Lineas de Acción -- Objetivos */
+      .lineas-accion {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        margin: 30px;
+      } 
+
+      .img-lineaAccion img {
+        max-width: 100%;
+        width: 300px;
+      }
+
+      .incidencia-objetivos {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+      }
+
+      @media screen and (max-width: 1000px) {
+        .incidencia-objetivos {
+          display: block;
+        }
+      }
+
+      .gobernanzaForestal, .conectividadForestal, .competividadForestal {
+        padding: 20px;
+        margin: 10px;
+      }
+
+      .img-gobernanzaForestal, .img-conectividadForestal, .img-competividadForestal {
+        border: 5px solid var(--verdeReforestamos);
+        border-radius: 50%;
+        padding: 50px;
+      }
+
+      .img-gobernanzaForestal img, .img-conectividadForestal img, .img-competividadForestal img {
+        max-width: 100%;
+        max-height: 100%;
+        width: 130px;
+        height: 130px;
+      }
+
+      .gobernanzaForestal {
+        display: flex;
+        align-items: center;
+      }
+
+      .competividadForestal {
+        display: flex;
+        align-items: center;
+      }
+
+      .conectividadForestal {
+        margin: 10px;
+        padding: 20px;
+        position: relative;
+      }
+
+      .img-conectividadForestal {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        background-color: #fff;
+        bottom: 30%;
+        left: 31%;
+      }
+
+      .objetivos {
+        display: flex;
+      }
+
+      .objetivo {
+       border: 5px solid var(--verdeReforestamos);
+       padding: 60px;
+      }
+
+      @media screen and (max-width:700px) {
+        .objetivo {
+          padding: 20px;
+        }
+      }
+
+      .uno {
+        border-start-end-radius: 100%;
+        border-right-width: 2.5px;
+        border-bottom-width: 2.5px;
+        direction: rtl;
+      }
+
+      .dos {
+        border-start-end-radius: 100%;
+        border-left-width: 2.5px;
+        border-bottom-width: 2.5px;
+      }
+
+      .tres {
+        border-bottom-left-radius: 100%;
+        border-top-width: 2.5px;
+        border-right-width: 2.5px;
+      }
+
+      .cuatro {
+        border-bottom-right-radius: 100%;
+        border-top-width: 2.5px;
+        border-left-width: 2.5px;
+      }
+
+      .objetivo img {
+        max-width: 100%;
+        width: 150px;
+      }
+
+      .objetivo {
+        position: relative;
+      }
+
+      .objetivo-texto {
+        position: absolute;
+        z-index: 4;
+        padding: 20px;
+        width: 80%;
+      }
+
+      .texto-uno {
+        top: 0;
+        left: -50%;
+      }
+
+      .texto-dos {
+        top: 0;
+        right: -50%;
+      }
+
+      .texto-tres {
+        bottom: 0;
+        left: -50%;
+      }
+
+      .texto-cuatro {
+        bottom: 0;
+        right: -50%;
+      }
+
+      .objetivo-texto p {
+        color: var(--verdeReforestamos);
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
     </style>
   </head>
 
@@ -341,17 +493,81 @@
 
 
 
-    <section class="lineasAcccion">
-      <div class="gobernanzaForestal">
-        
+    <section class="container-xxl historia">
+      <h1 class="lineas__accion__titulo encabezado"><img src="img/icon/bellota líneas.png" alt="Bellota Reforestamos" width="30" class="mb-2"> Nuestras líneas de acción y objetivos</h1>
+
+      <div class="lineas-accion">
+        <div class="img-lineaAccion">
+          <img src="./img/IconosReforestamos/lineas de acción/líneas de acción-nombre-11.png" alt="">
+        </div>
+
+        <div class="img-lineaAccion">
+          <img src="./img/IconosReforestamos/lineas de acción/líneas de acción-nombre-12.png" alt="">
+        </div>
       </div>
 
-      <div class="conectividadForestal">
 
+      <div class="incidencia-objetivos">
+        <div class="gobernanzaForestal">
+          <div class="img-gobernanzaForestal">
+            <img src="./img/IconosReforestamos/Procesos de incidencia/procesos de incidencia-35.png" alt="Procesos de Incidencia">
+          </div>
+        </div>
+
+        <div class="conectividadForestal">
+          <div class="objetivos">
+            <div class="objetivo uno">
+              <img src="./img/IconosReforestamos/Objetivos-iconos/objetivos-05.png" alt="Objetivos">
+              <div class="objetivo-texto texto-uno">
+                <p>Detener Deforestación</p>
+              </div>
+            </div>
+
+            <div class="objetivo dos">
+              <img src="./img/IconosReforestamos/Objetivos-iconos/objetivos-06.png" alt="Objetivos">
+              <div class="objetivo-texto texto-dos">
+                <p>Impulsar el manejo forestal sostenible</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="objetivos">
+            <div class="objetivo tres">
+              <img src="./img/IconosReforestamos/Objetivos-iconos/objetivos-07.png" alt="Objetivos">
+              <div class="objetivo-texto texto-tres">
+                <p>Fomentar arborización urbana</p>
+              </div>
+            </div>
+
+            <div class="objetivo cuatro">
+              <img src="./img/IconosReforestamos/Objetivos-iconos/objetivos-08.png" alt="Objetivos">
+              <div class="objetivo-texto texto-cuatro">
+                <p>Promover Restauación</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="img-conectividadForestal">
+            <img src="./img/IconosReforestamos/Procesos de incidencia/procesos de incidencia-33.png" alt="">
+          </div>
+
+        </div>
+
+        <div class="competividadForestal">
+          <div class="img-competividadForestal">
+            <img src="./img/IconosReforestamos/Procesos de incidencia/procesos de incidencia-34.png" alt="">
+          </div>
+        </div>
       </div>
 
-      <div class="competitividadForestal">
+      <div class="lineas-accion">
+        <div class="img-lineaAccion">
+          <img src="./img/IconosReforestamos/lineas de acción/líneas de acción-nombre-13.png" alt="">
+        </div>
 
+        <div class="img-lineaAccion">
+          <img src="./img/IconosReforestamos/lineas de acción/líneas de acción-nombre-14.png" alt="">
+        </div>
       </div>
     </section>
 
