@@ -641,17 +641,25 @@ a.active {
     width: 100px;
     height: 100px;
   }
+}
 
+@media (min-width: 300px) and (max-width:500px) {
   .linea__accion__info {
     margin-top: 60px!important;
     padding: 5px!important;
   }
+}
 
-  .linea__accion__info h2 {
-    font-size: 15px!important;
+@media (min-width: 500px) and (max-width: 982px) {
+  .linea__accion__info {
+    margin-top: 70px!important;
   }
 
+  .linea__accion h2 {
+    font-size: 1.6rem!important;
+  }
 }
+
 
 .linea__accion .card-cover {
   height: 100%;
@@ -685,17 +693,19 @@ a.active {
   text-align: center;
 }
 
+@media (min-width:300px) and (max-width:500px) {
+  .nota__titulo {
+    margin: 2px!important;
+    font-size: 1rem!important;
+  }
+}
+
 
 @media (min-width: 300px) and (max-width: 900px) {
   .notas__principales {
     margin: 20px auto;
     width: 80%;
     padding: 20px;
-  }
-
-  .nota__titulo {
-    margin: 2px!important;
-    font-size: 1rem!important;
   }
   
   .nota__texto {
@@ -714,9 +724,14 @@ a.active {
   font-size: 1.5rem;
 }
 
+.nota .nota__img {
+  border-radius: 15px;
+}
+
 .nota .nota__img img {
   overflow: hidden;
   transition: transform .3s;
+  border-radius: 15px;
 }
 
 .nota .nota__img img:hover {
