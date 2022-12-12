@@ -24,6 +24,13 @@ const tituloInfo = [
   '¡Hola! ¡Qué bueno que escribes! ¿con qué opción te puedo ayudar?'
 ];
 
+const parrafoTitulo = [
+  {numero: 1, parrafo: 'Nuestro horario de atención por este canal es de lunes a viernes de 9 am. a 6 pm. Después de este horario, al siguiente día atenderemos tu petición.' },
+  {numero:2, parrafo: '🙅‍♂️ Nunca te voy a pedir información personal, tampoco la escribas ni mandes imágenes. Ej. Números de tarjetas de débito o crédito, contraseñas, NIP, etc. 🚫'},
+  {numero: 3, parrafo: 'Nuestro aviso de privacidad ha sido actualizado, puedes consultarlo en: <a href="#">www.reforestamos.org/aviso-privacidad</a>'},
+  {numero: 4, parrafo: '¡Hola! ¡Qué bueno que escribes! ¿con qué opción te puedo ayudar?'}
+]
+
 
 const tituloInfor = [
   {numero: 1, parrafo: 'Nuestro horario de atención por este canal es de lunes a viernes de 9 am. a 6 pm. Después de este horario, al siguiente día atenderemos tu petición.'},
