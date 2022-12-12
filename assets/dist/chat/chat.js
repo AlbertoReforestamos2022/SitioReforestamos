@@ -146,7 +146,6 @@
         chatHeader.appendChild(title);
         chatHeader.appendChild(exit);
 
-
         // .chat-body
         const chatInfo = document.createElement('div');
         chatInfo.classList.add('chat__info');
@@ -165,6 +164,7 @@
             }
             return e;
         }
+
         listaParrafos(chatInfo);
         
         // .lista
@@ -177,7 +177,7 @@
         chatBody.appendChild(opcionesContent);
         const listaopciones = (f) => {
 
-            listaOpciones.forEach(listaOpcion => {
+            listaOpciones.map(listaOpcion => {
                 const {numero, opcion} = listaOpcion;
                 const colOpciones = document.createElement('div');// div.col
                 colOpciones.classList.add('col-12');
