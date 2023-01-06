@@ -1,11 +1,30 @@
-(() => {
+(()=> {
     'use strict'
-    /* Contendor general bot */
+
+    /** Container general bot --------------------------------------------*/
     const botContainer = document.querySelector('.bot');
 
-    /* Render SVG´s */
+    /** Container Chat ---------------------------------------------------*/
+    // Container Chat
+    const containerChat = document.createElement('div');
+    containerChat.classList.add('container__chat', 'chat');
+    containerChat.setAttribute('id', 'chat');
+
+    /** Container body chat --------------------------------------------*/
+    const chatBody = document.createElement('div');
+    chatBody.classList.add('chat-body');
+
+    /** Container body chat Info -----------------------------------------*/
+    const chatInfo = document.createElement('div');
+    chatInfo.classList.add('chat__info');
+
+    /** Container footer input -------------------------------------------*/
+    const chatInput = document.createElement('div');
+    chatInput.classList.add('chat-input')
+    
+    /* Render SVG´s ------------------------------------------------------*/
     // Chat Glove
-    const renderSvgChat = (node) => {
+    const renderSvgChat = (chat) => {
         const iconSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         const iconPath = document.createElementNS(
             'http://www.w3.org/2000/svg',
@@ -23,7 +42,7 @@
          );
 
         iconSVG.appendChild(iconPath);
-        return node.appendChild(iconSVG)
+        return chat.appendChild(iconSVG)
     }
     // Chat Header Exit 
     const renderSvgExit = (exit) => {
@@ -76,59 +95,44 @@
         iconSVG.appendChild(iconPath);
         return send.appendChild(iconSVG)
     }
+    /** ------------------------------------------------------------------*/
 
-    /* Render Chat */
-    // Glove chat
-    const renderGloveChat = ()=> {
-    /* Contendor boton chat */
-    // .container__chat .chat__glove
+    /* Glove chat --------------------------------------------------------*/
+    function renderGloveChat() {
+        /* Contendor boton chat */
+        // .container__chat .chat__glove
         const chatGlove = document.createElement('div');
-    // .button_chat_glove
-        const bottonChatGlove = document.createElement('div');
-    // button chat glove
-        const bottonChat = document.createElement('button');
-
-    /* ClassList.add */
         chatGlove.classList.add('container__chat', 'chat__glove');
+        // .button_chat_glove
+        const bottonChatGlove = document.createElement('div');
         bottonChatGlove.classList.add('button_chat_glove');
         bottonChatGlove.setAttribute('id', 'chatGlove');
+        // button chat glove
+        const bottonChat = document.createElement('button');
         bottonChat.classList.add('button__chat');
 
-    /* AppendChild´s Glove*/
+        
+        /* AppendChild´s Glove*/
         bottonChatGlove.appendChild(bottonChat);
         chatGlove.appendChild(bottonChatGlove);
         botContainer.appendChild(chatGlove);
         renderSvgChat(bottonChat);
 
-    return;
+        return;
     }
+    /* -------------------------------------------------------------------*/
 
-    // Body Chat
-    const renderChat = ()=> {
-        /** Contenedores principales div */
-        // Contendor principal .container__chat 
-        const containerChat = document.createElement('div');
-        containerChat.classList.add('container__chat', 'chat');
-        containerChat.setAttribute('id', 'chat');
-        // .chat-header
+    /** Header chat ------------------------------------------------------*/
+    function chatHeader() {
         const chatHeader = document.createElement('div');
         chatHeader.classList.add('chat-header');
-        // .chat-body 
-        const chatBody = document.createElement('div');
-        chatBody.classList.add('chat-body');
-        // .chat-input
-        const chatInput = document.createElement('div');
-        chatInput.classList.add('chat-input')
 
-
-        /* Contenedores subprincipales */
-        // .chat-header
         const logo = document.createElement('div');
         logo.classList.add('logo');
         const logoImg = document.createElement('img');
         logoImg.setAttribute('src', 'img/logo rm 600x315 para web.png');
         logoImg.classList.add('p-1');
-        logoImg.setAttribute('alt', 'Logo RMX');
+        logoImg.setAttribute('alt', 'Logo Reforestamos México');
         logo.appendChild(logoImg);
         
         const title = document.createElement('div');
@@ -136,143 +140,165 @@
 
         const exit = document.createElement('div');
         exit.classList.add('exit');
+
         const buttonExit = document.createElement('button');
         buttonExit.classList.add('exit__button');
         buttonExit.setAttribute('id', 'salir');
         renderSvgExit(buttonExit);
-        exit.appendChild(buttonExit)
+        exit.appendChild(buttonExit);
 
         chatHeader.appendChild(logo);
         chatHeader.appendChild(title);
         chatHeader.appendChild(exit);
 
-        // .chat-body
-        const chatInfo = document.createElement('div');
-        chatInfo.classList.add('chat__info');
+        // appendChild chat header
+        containerChat.appendChild(chatHeader);
         
-        // .titulo__info
-        const listaParrafos = (e) => {
-            let contenido;
-            let p; 
+        return;
+    } 
+    /** ------------------------------------------------------------------*/
+    
+    
+    /** Body chat --------------------------------------------------------*/
+    function bodyChat() {
+        bodyInfo();
+        bodyPrincipalOptions();
 
-            for (let i = 0; i < tituloInfo.length; i++) {
-                p = document.createElement("p");
+        // appendChild bodyContainer
+        containerChat.appendChild(chatBody)
+        return;
+    }
+    /** ------------------------------------------------------------------*/
+
+    /** Chat Info --------------------------------------------------------*/
+    // Body Info
+    function bodyInfo() {
+        const listaParrafos = (e)=> {
+            parrafosTitulos.map(parrafoTitulo => {
+                const {parrafo} = parrafoTitulo;
+
+                const p = document.createElement("p");
                 p.classList.add('titulo__info');
-                contenido = tituloInfo[i];
-                p.appendChild(document.createTextNode(contenido));
+                p.textContent = `${parrafo}`;
+
                 chatInfo.appendChild(p);
-            }
+            })
             return e;
         }
+        listaParrafos(chatInfo)
+        chatBody.appendChild(chatInfo);
+    }
+    /** ------------------------------------------------------------------*/
 
-        listaParrafos(chatInfo);
-        
-        // .lista
-        const opcionesContent = document.createElement('div')
+    /** Chat Principal Option --------------------------------------------*/
+    // Body Chat Opciones Principales
+    function bodyPrincipalOptions() {
+        const opcionesContent = document.createElement('div');
         opcionesContent.classList.add('container', 'lista', 'm-0');
-        const rowOpciones = document.createElement('div'); // div.row
-        rowOpciones.classList.add('row','justify-content-center')
+
+        const rowOpciones = document.createElement('div');
+        rowOpciones.classList.add('row', 'justify-content-center');
 
         opcionesContent.appendChild(rowOpciones);
-        chatBody.appendChild(opcionesContent);
-        const listaopciones = (f) => {
 
+        const opcionesPrincipales = (f) =>{
             listaOpciones.map(listaOpcion => {
                 const {numero, opcion} = listaOpcion;
-                const colOpciones = document.createElement('div');// div.col
-                colOpciones.classList.add('col-12');
-                const opcionDiv = document.createElement('div');
-                opcionDiv.classList.add('opcion-content')
-                const btnOpcion = document.createElement('a');
-                btnOpcion.setAttribute('href', '#')
-                btnOpcion.classList.add(`btn-opcion-${numero}`);
-
-                btnOpcion.textContent = `
-                ${numero}: ${opcion}
-                `;
                 
+                const colOpciones = document.createElement('div');
+                colOpciones.classList.add('col-12');
+
+                const opcionDiv = document.createElement('div');
+                opcionDiv.classList.add('opcion-content');
+
+                const btnOpcion = document.createElement('p');
+                btnOpcion.classList.add(`btn-opcion-${numero}`);
+                btnOpcion.textContent = `
+                    ${numero}: ${opcion}
+                `;
+
                 opcionDiv.appendChild(btnOpcion);
                 colOpciones.appendChild(opcionDiv);
                 rowOpciones.appendChild(colOpciones);
+                // console.log(numero, opcion)
                 return;
             })
             return f;
         }
 
-        listaopciones(chatBody).scrollIntoView();
+        opcionesPrincipales(chatBody).scrollIntoView();
         chatInfo.appendChild(opcionesContent);
 
-
-
+        // Escribe una opcion
         const elejirOpcion = document.createElement('p');
         elejirOpcion.classList.add('titulo__info', 'text-center');
-        const elejirOpcionTexto = document.createTextNode('Escribe un número');
-        elejirOpcion.appendChild(elejirOpcionTexto);
-        chatInfo.appendChild(elejirOpcion)
+
+        elejirOpcion.textContent = 'Escibe un número';
         
-        chatBody.appendChild(chatInfo);
-        
-
-        /* .chat-info */
-        // .input-sec 
-        const inputSec = document.createElement('div');
-        inputSec.classList.add('input-sec');
-        // input
-        const inputResponse = document.createElement('input');
-        inputResponse.setAttribute('type', 'number');
-        inputResponse.setAttribute('min', '1');
-        inputResponse.setAttribute('max', '9');        
-        inputResponse.setAttribute('id', 'txtInput');
-        inputResponse.setAttribute('maxlength', '3');
-        inputResponse.setAttribute('placeholder', 'Escribe un número');        
-        inputSec.appendChild(inputResponse);
-
-        // .send
-        const sendbutton = document.createElement('div');
-        sendbutton.classList.add('send'); 
-        renderSvgSend(sendbutton);
-
-        chatInput.appendChild(inputSec);
-        chatInput.appendChild(sendbutton)
-        
-        /** AppendChild de todos los hijos*/
-        containerChat.appendChild(chatHeader);
-        containerChat.appendChild(chatBody);
-        containerChat.appendChild(chatInput);
-        botContainer.appendChild(containerChat);
-
-        return;
+        chatInfo.appendChild(elejirOpcion);
     }
 
-    /* Renderización Chat */
+    /** Chat Footer ------------------------------------------------------*/
+    // Body Chat Opciones Principales
+    function chatFooter() {
+        const inputDiv = document.createElement('div');
+        inputDiv.classList.add('input-sec');
+
+        // input 
+        const inputResponse = document.createElement('input');
+        inputResponse.setAttribute('type', 'number');      
+        inputResponse.setAttribute('id', 'txtInput');
+        inputResponse.setAttribute('maxlength', '3');
+        inputResponse.setAttribute('placeholder', 'Escribe un número');
+        inputDiv.appendChild(inputResponse);
+        
+        // .send 
+        const sendButton = document.createElement('div');
+        sendButton.classList.add('send');
+        renderSvgSend(sendButton);
+
+        chatInput.appendChild(inputDiv);
+        chatInput.appendChild(sendButton);
+
+
+        containerChat.appendChild(chatInput);
+        return; 
+    }
+    // Footer chat (input)
+
+    function renderChat(){
+        chatHeader();
+        bodyChat();
+        chatFooter();
+
+        // containerChat
+        botContainer.appendChild(containerChat);
+        return; 
+    }
+
     renderGloveChat();
     renderChat();
 
-
-
     /** animation Glove-Container */
-    const animationContainer = () => {
+    function renderContentChat() {
         const chat = document.querySelector('#chat');
-        const salir = document.querySelector('.exit'); 
+        const exit = document.querySelector('.exit'); 
         const glove = document.querySelector('.chat__glove');
         const options = document.querySelector('.chat__info');
-        const displayNone = 'disNo';
-        const displayBlock = 'disBlo';
-        const none = 'none';
-        const block = 'block'
+        const displayNone = 'display-none';
+        const displayBlock = 'display-block';
 
         chat.classList.add(displayNone);
         options.classList.add(displayNone);
-
     
         
         glove.addEventListener('click', glovechat => {
-            const addChat = document.querySelector('#chat');
+            const chat = document.querySelector('#chat');
             glovechat.preventDefault();
-            addChat.style.display = block;
+            chat.classList.add(displayBlock)
             
-            if(addChat.style.display = block){
-                glove.style.display = none;
+            if(chat.classList.add(displayBlock)){
+                glove.classList.add(displayNone);
             }
     
             setTimeout(()=> {
@@ -281,122 +307,186 @@
             },1000)
         })
         
-        salir.addEventListener('click', event =>{
-            const removeChat = document.querySelector('#chat');
-        
+        exit.addEventListener('click', event =>{       
             event.preventDefault();
-            removeChat.style.display = none;
+            chat.style.display = 'none';
             
-            if (removeChat.style.display = none) {
-                glove.style.display = block; 
+            if (chat.style.display = 'none') {
+                glove.classList.add(displayBlock) 
             } else {
-                glove.style.display = none; 
+                glove.style.display = 'none'; 
             }
         
         }); 
     }
-    animationContainer();
+    renderContentChat();
 
+    /** Select Options */
+    function selectOptions() {
+        const chatBody = document.querySelector('.chat-body');
+        const inputValue = document.querySelector('#txtInput');
+        const send = document.querySelector('.send');
 
-
-    /** Chat Response */
-    const chatResponse = () => {
-        const chatBody = document.querySelector(".chat-body");
-        const txtInput = document.querySelector("#txtInput");
-        const send = document.querySelector(".send");
-        
+        //*  Event Listeners */
+        // Bloquear el elemento .send si txtInput == ""
         send.addEventListener("click", () => {
-            return txtInput.value!=="" 
+            return inputValue.value!=="" 
             ? renderUserMessage() 
             : false;
         });
+
         
-        txtInput.addEventListener("keyup", (event) => {
-            return event.keyCode === 13 && txtInput.value!=="" 
+        // Bloquear tecla enter si txt.value == ""
+        inputValue.addEventListener("keyup", (event) => {
+            return event.keyCode === 13 && inputValue.value!=="" 
             ? renderUserMessage() 
             : false;
         });
-        
+
+        //* Asignar los elementos a imprimir en html */
+        const renderMessageEle = (txt, type) => {
+            let className = "user-message";
+            const messageEle = document.createElement("div");
+            const txtNode = document.createTextNode(txt);
+
+            if (type !== "user") {
+            className = "chatbot-message";
+            }
+
+            messageEle.classList.add(className);
+            messageEle.append(txtNode);
+            chatBody.append(messageEle);
+        };
+
+        //* Renderizar el mensage del usuario  */
         const renderUserMessage = () => {
-          const userInput = txtInput.value;
-          renderMessageEle(userInput, "user");
-          txtInput.value = "";
-          setTimeout(() => {
+            const userInput = inputValue.value;
+            renderMessageEle(userInput, "user");
+            inputValue.value = "";
+
+            setTimeout(() => {
             renderChatbotResponse(userInput);
             setScrollPosition();
-          }, 1000);
+            }, 1000);
         };
-        
+        // *** ------------------------------*/
+
+        //* Renderizar el mensaje del "Bot"  */
         const renderChatbotResponse = (userInput) => {
-          const res = getChatbotResponse(userInput);
-          renderMessageEle(res);
-        };
-        
-        const renderMessageEle = (txt, type) => {
-          let className = "user-message";
-          if (type !== "user") {
-            className = "chatbot-message";
-          }
+            const res = userInput;
 
-          const messageEle = document.createElement("div");
-          const txtNode = document.createTextNode(txt);
-          messageEle.classList.add(className);
-          messageEle.append(txtNode);
-          chatBody.append(messageEle);
+            if(res == 1) {
+                renderMessageEle('Voluntariado 🦺');
+
+                listaVoluntariado.map(voluntariado => {
+                    const {numero, opcion} = voluntariado;
+                    
+                    renderMessageEle(`${numero} : ${opcion}`);
+                    console.log(`${numero} : ${opcion}`)
+                })
+                
+            } else if(res == 2 ) {
+                renderMessageEle('Marketing con causa 📱');
+
+                listaMarketing.map(marketing => {
+                    const {numero, opcion} = marketing;
+                    renderMessageEle(`${numero} : ${opcion}`);
+                    console.log(`${numero} : ${opcion}`)
+                })
+            } else if(res == 3) {
+                renderMessageEle('Adopta un árbol 🌱');
+                listaAdopta.map(adopta => {
+                    const {numero, opcion} = adopta;
+
+                    renderMessageEle(`${numero} : ${opcion}`);
+                    console.log(`${numero} : ${opcion}`)
+                })
+            } else if (res == 4) {
+                renderMessageEle('Bolsa de trabajo 👨‍👧');
+                listaBolsa.map(bolsa => {
+                    const {numero, opcion} = bolsa;
+
+                    renderMessageEle(`${numero} : ${opcion}`);
+                    console.log(`${numero} : ${opcion}`)
+                })
+            } else if (res == 5) {
+                renderMessageEle('Centinelas del Tiempo 📷');
+                listaCentinelas.map(centinelas => {
+                    const {numero, opcion} = centinelas;
+
+                    renderMessageEle(`${numero} : ${opcion}`);
+                    console.log(`${numero} : ${opcion}`)
+                })
+
+            } else if (res == 6 ) { // ------
+                renderMessageEle('Compra y/o venta de árboles 🌳')
+
+
+            } else if (res == 7 ) { // ------
+                renderMessageEle('Donar💰');
+
+                listaDonar.map(donar => {
+                    const {numero, opcion} = donar;
+
+                    renderMessageEle(`${numero} : ${opcion}`);
+                    console.log(`${numero} : ${opcion}`)
+                })
+            } else if (res == 8 ) { // ------
+                renderMessageEle('Contacto ☎️');
+
+                listaContacto.map(contacto => {
+                    const {numero, opcion} = contacto;
+
+                    renderMessageEle(`${numero} : ${opcion}`);
+                    console.log(`${numero} : ${opcion}`)
+                })
+            } else if (res == 9 ) { // ------
+                renderMessageEle('Eventos y convocatorias 📝');
+
+                listaEventos.map(eventos => {
+                    const {numero, opcion} = eventos;
+
+                    renderMessageEle(`${numero} : ${opcion}`);
+                    console.log(`${numero} : ${opcion}`)
+                })
+            } else {
+                renderMessageEle('Ingresa una opcion valida');
+            }
         };
-        
-        const getChatbotResponse = (userInput) => {
-          return responseObj[userInput] == undefined || false
-            ? "Ingresa un número"
-            : responseObj[userInput];
-        };
-        
+        // *** ------------------------------*/
+
+        // Enviar "Ingresa un número" si listaOpciones[userInput] === undefined || false
+        // ** Response chat     */ 
+        // const getChatbotResponse = (opcion) =>{
+        //     // return listaOpciones[opcion] === undefined || false
+        //     // ? "Ingresa una opcion valida"
+        //     // : listaOpciones.map(item => {
+        //     // const divContent = document.createElement('div');
+        //     // divContent.classList.add("chatbot-message");
+
+        //     // const {numero, opcion} = item;
+                
+        //     //  divContent.textContent = `${numero}: ${opcion}`;
+        //     //  console.log(item)
+        //     //  chatBody.appendChild(divContent);
+        //     // })
+
+        //     if(opcion == 1) {
+        //         console.log('Uno');
+        //     }
+        // }
+
+        // *** ------------------------------*/
+
+        //* Scroll del Chat  */ 
         const setScrollPosition = () => {
-          if (chatBody.scrollHeight > 0) {
+            if (chatBody.scrollHeight > 0) {
             chatBody.scrollTop = chatBody.scrollHeight;
-          }
+            }
         };
+
+        // *** ------------------------------*/
+
     }
-
-    chatResponse();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
+    selectOptions()
 })();
-
-
-
-

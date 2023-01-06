@@ -170,7 +170,6 @@ footer .aviso__privacidad {
 .contenedor-responsivo {
   position: relative!important;
   overflow: hidden!important;
-  padding-top: 56.25%!important;
 }
 
 .iframe-responsivo {
@@ -180,6 +179,11 @@ footer .aviso__privacidad {
   border: none!important;
   width: 100%!important;
   height: 100%!important;
+}
+
+.frame {
+  height: 700px!important;
+  margin-top: 50px!important;
 }
 
 
@@ -732,6 +736,7 @@ a.active {
   overflow: hidden;
   transition: transform .3s;
   border-radius: 15px;
+  height: 40%;
 }
 
 .nota .nota__img img:hover {
@@ -1058,7 +1063,8 @@ a.active {
   margin-bottom: 50px;
   padding: 20px;
   height: 200px;
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
+  border-bottom: 1px solid #ccc;
   color: rgba(101, 180, 146, 0.9);
 }
 
@@ -1555,9 +1561,17 @@ a.active {
     }
 
     .bg-incendios {
-      border: 2px solid #FF5370;
+      text-align: center;
+      display: flex!important;
+      align-items: center!important;
       color: #FF5370;
       font-weight: bold!important;
+      width: 400px;
+      height: 130px;
+    }
+
+    .img-danio {
+      margin-bottom: 15px!important;
     }
 
     .lista-peligros > a {
@@ -1634,7 +1648,7 @@ a.active {
     .acciones__lista h2 {
       padding: 10px;
       margin-bottom: 10px;
-      color: #036935;
+      color: var(--blanco);
       font-weight: bold;
       text-align: center;
     }

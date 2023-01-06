@@ -4,7 +4,7 @@ const colInfo = document.querySelector('.collapse__info')
 
 const renderCollapse = () => {
     for(let i = 0; i<col.length; i++) {
-        col[i].addEventListener('click', function(){
+        col[i].addEventListener('click',()=> {
             this.classList.toggle('active');
             let content = this.nextElementSibling;
             if(content.style.display === "block"){
@@ -21,30 +21,13 @@ const renderCollapse = () => {
 renderCollapse();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Link redes sociales
+const facebook = document.querySelector('.facebook');
+const instagram = document.querySelector('.instagram');
+const linkedIn = document.querySelector('linkedin');
+const twitter = document.querySelector('twitter');
+const tikTok = document.querySelector('.tik-tok');
+const youTube = document.querySelector('.youtube');
 
 
 /* Menú Navegación  */

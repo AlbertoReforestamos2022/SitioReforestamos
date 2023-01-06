@@ -45,7 +45,7 @@ const renderCalendar = () => {
 
   document.querySelector(".meses h2").innerHTML = meses[date.getMonth()];
   document.querySelector(".meses p").innerHTML = date.getFullYear();
-  month.classList.add("verde-rm")
+  month.classList.add("verde-rm");
 
   let days = "";
 
@@ -83,32 +83,3 @@ document.querySelector(".siguiente").addEventListener("click", () => {
 });
 
 renderCalendar();
-
-
-
-
-document.querySelector('.dias-mes-20').classList.add('evento-activo')
-document.querySelector('.dias-mes-20').classList.add('evento-activo', 'hola')
-
-document.querySelector('.dias-mes-21').classList.add('evento-activo', 'hola')
-document.querySelector('.dias-mes-22').classList.add('evento-activo', 'hola')
-document.querySelector('.dias-mes-23').classList.add('evento-activo', 'hola')
-document.querySelector('.dias-mes-24').classList.add('evento-activo', 'hola')
-document.querySelector('.dias-mes-25').classList.add('evento-activo', 'hola')
-document.querySelector('.dias-mes-26').classList.add('evento-activo', 'hola')
-document.querySelector('.dias-mes-27').classList.add('evento-activo', 'hola')
-
-
-function byeVentana(){
-  let cer = document.querySelector("#test");
-  cer.classList.add("d-none");
-}
-
-document.querySelector(".hola").addEventListener("click", () => {
-  let ob = document.querySelector(".evento-activo");
-  ob.classList.remove("d-none");
-
-
-  let detalle = document.querySelector("div.detalles-evento");
-  detalle.innerHTML = "";
-});
