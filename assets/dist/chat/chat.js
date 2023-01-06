@@ -375,7 +375,7 @@
         const renderChatbotResponse = (userInput) => {
             const res = userInput;
 
-            if(res == 1) {
+            if(res == 1 ) {
                 renderMessageEle('Voluntariado 🦺');
 
                 listaVoluntariado.map(voluntariado => {
