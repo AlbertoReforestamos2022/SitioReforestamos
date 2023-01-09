@@ -758,12 +758,12 @@ a.active {
 .acciones a {
   margin-top: 30px;
   text-decoration: none;
-  color: var(--verdeReforestamos);
+  color: #fff;
 }
 
 .link-plataforma a{
   text-decoration: none;
-  color: var(--blanco);
+  color: var(--verdeReforestamos);
 }
 
 .link-plataforma a:hover {
