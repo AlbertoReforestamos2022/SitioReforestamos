@@ -767,7 +767,7 @@ a.active {
 }
 
 .link-plataforma a:hover {
-  color: var(--blanco);
+  color: var(--verdeArbol);
 }
 
 .titulo__card {
