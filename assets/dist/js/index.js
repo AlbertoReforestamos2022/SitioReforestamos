@@ -2,10 +2,11 @@
 const col = document.querySelectorAll('.button__colapse');
 const colInfo = document.querySelector('.collapse__info')
 
-const renderCollapse = () => {
+function renderCollapse() {
     for(let i = 0; i<col.length; i++) {
-        col[i].addEventListener('click',()=> {
+        col[i].addEventListener('click', function() {
             this.classList.toggle('active');
+
             let content = this.nextElementSibling;
             if(content.style.display === "block"){
                 content.style.display = "none";

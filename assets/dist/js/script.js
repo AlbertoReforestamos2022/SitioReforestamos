@@ -83,3 +83,36 @@ document.querySelector(".siguiente").addEventListener("click", () => {
 });
 
 renderCalendar();
+
+
+function sombrearDias() {
+  const dia18 = document.querySelector('.dias-mes-18');
+  const dia19 = document.querySelector('.dias-mes-19');
+  const dia20 = document.querySelector('.dias-mes-20');
+  const dia21 = document.querySelector('.dias-mes-21');
+  const dia22 = document.querySelector('.dias-mes-22');
+  const dia23 = document.querySelector('.dias-mes-23');
+
+
+
+  // .dibujo-verde
+  // dia18.classList.add('dibujo-verde');
+  dia19.classList.add('dibujo-verde');
+  dia20.classList.add('dibujo-verde');
+  dia21.classList.add('dibujo-verde');
+  dia22.classList.add('dibujo-verde');
+  dia23.classList.add('dibujo-verde');
+
+
+
+  const renderModal = ()=> {
+    // dia20.classList.add('modal-dialog', 'modal-dialog-centered', 'modal-dialog-scrollable');
+    dia20.setAttribute('data-bs-toggle', 'modal');
+    dia20.setAttribute('data-bs-target', '#modalEjemplo');
+
+  }
+
+  renderModal();
+}
+
+sombrearDias();

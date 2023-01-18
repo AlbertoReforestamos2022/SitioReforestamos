@@ -214,7 +214,7 @@
                 const btnOpcion = document.createElement('p');
                 btnOpcion.classList.add(`btn-opcion-${numero}`);
                 btnOpcion.textContent = `
-                    ${numero}: ${opcion}
+                    ${numero}.  ${opcion}
                 `;
 
                 opcionDiv.appendChild(btnOpcion);
@@ -229,13 +229,13 @@
         opcionesPrincipales(chatBody).scrollIntoView();
         chatInfo.appendChild(opcionesContent);
 
-        // Escribe una opcion
-        const elejirOpcion = document.createElement('p');
-        elejirOpcion.classList.add('titulo__info', 'text-center');
+        // // Escribe una opcion
+        // const elejirOpcion = document.createElement('p');
+        // elejirOpcion.classList.add('titulo__info', 'text-center');
 
-        elejirOpcion.textContent = 'Escibe un número';
+        // elejirOpcion.textContent = 'Escribe un número';
         
-        chatInfo.appendChild(elejirOpcion);
+        // chatInfo.appendChild(elejirOpcion);
     }
 
     /** Chat Footer ------------------------------------------------------*/
@@ -285,25 +285,24 @@
         const exit = document.querySelector('.exit'); 
         const glove = document.querySelector('.chat__glove');
         const options = document.querySelector('.chat__info');
-        const displayNone = 'display-none';
-        const displayBlock = 'display-block';
 
-        chat.classList.add(displayNone);
-        options.classList.add(displayNone);
+        chat.classList.add('display-none');
+        options.classList.add('display-none');
     
         
         glove.addEventListener('click', glovechat => {
-            const chat = document.querySelector('#chat');
             glovechat.preventDefault();
-            chat.classList.add(displayBlock)
+
+            // const chat = document.querySelector('#chat');
+            // chat.classList.add('display-block')
             
-            if(chat.classList.add(displayBlock)){
-                glove.classList.add(displayNone);
+            if(chat.classList.add('display-block')){
+                glove.classList.add('display-none');
             }
     
             setTimeout(()=> {
-                options.classList.remove(displayNone);
-                options.classList.add(displayBlock);
+                options.classList.remove('display-none');
+                // options.classList.add('display-block');
             },1000)
         })
         
@@ -312,7 +311,7 @@
             chat.style.display = 'none';
             
             if (chat.style.display = 'none') {
-                glove.classList.add(displayBlock) 
+                glove.classList.add('display-block') 
             } else {
                 glove.style.display = 'none'; 
             }

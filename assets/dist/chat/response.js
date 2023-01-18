@@ -24,7 +24,8 @@ const tituloInfo = [
 const parrafosTitulos = [
   {numero: 1, parrafo: '🙅‍♂️ Nunca te voy a pedir información personal, tampoco la escribas ni mandes imágenes. Ej. Números de tarjetas de débito o crédito, contraseñas, NIP, etc. 🚫'},
   {numero: 2, parrafo: 'Nuestro aviso de privacidad ha sido actualizado, puedes consultarlo en: www.reforestamos.org/aviso-privacidad'},
-  {numero: 3, parrafo: '¡Hola! ¿con qué opción te puedo ayudar?'}
+  {numero: 3, parrafo: '¡Hola! ¿Con qué opción te puedo ayudar?'},
+  {numero: 4, parrafo: 'Instrucciones: Escribe el número de acuerdo al tema de tu interés'}
 ]
 
 const listaOpciones = [
