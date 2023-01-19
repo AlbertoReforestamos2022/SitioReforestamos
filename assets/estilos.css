@@ -752,6 +752,14 @@ a.active {
   padding: 10px!important;
 }
 
+.notas-link {
+  text-decoration: none;
+}
+
+.notas-link p:hover {
+  color: rgba(3, 105, 53, .5)!important;
+  transition: all ease-out .3s;
+}
 
 /*------------------------- Acciones (Platafotmas) ---------------------------*/
 
@@ -977,7 +985,6 @@ a.active {
   z-index: 1;
 }
 
-
 .left {
   left: 0;
 }
@@ -992,7 +999,7 @@ a.active {
   content: " ";
   height: 0;
   position: absolute;
-  top: 22px;
+  top: 25px;
   width: 0;
   z-index: 1;
   right: 30px;
@@ -1022,10 +1029,19 @@ a.active {
 
 /* The actual content */
 .content {
-  padding: 30px 50px;
+  padding: 30px 10px;
   position: relative;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.logros {
+ padding: 30px 50px; 
+}
+
+.linea p {
+  margin: 0!important;
+  text-align: center!important;
 }
 
 
@@ -1571,12 +1587,9 @@ a.active {
       align-items: center!important;
       color: #FF5370;
       font-weight: bold!important;
-      width: 400px;
-      height: 130px;
-    }
-
-    .img-danio {
-      margin-bottom: 15px!important;
+      width: 300px;
+      height: 100px;
+      margin-top: 10px;
     }
 
     .lista-peligros > a {
@@ -1587,6 +1600,32 @@ a.active {
     .lista-peligros > h4 {
       text-align: center;
     }
+
+    .img-danio {
+      width: 130px;
+    }
+
+    .linea-img-left {
+      margin-left: 80px;
+    }
+
+    .linea-img-right {
+      margin-right: 80px;
+    }
+
+    .contenedor-linea {
+      display: flex!important;
+      justify-content: space-between;
+    }
+
+    /* @media screen and (max-width:900px) {
+      .contenedor-linea {
+        flex-direction: column-reverse!important;
+      }
+      .linea-img-left {
+        margin-left: 0!important;
+      }
+    } */
 
 
 
