@@ -18,9 +18,9 @@
   background: var(--blanco);
   position: fixed;
   bottom: 60px;
-  right: 10px;
+  right: 30px;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-  border-radius: 15px;
+  border-radius: 10px;
   z-index: 1032;
 }
 
@@ -37,7 +37,7 @@
 .chat__glove {
   right: 40px;
   width: 70px; 
-  height: 70px; 
+  height: 50px; 
   border-radius: 50px; 
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15); 
   background: var(--verdeClaro);
@@ -63,8 +63,8 @@
 }
 
 .button_chat_glove {
-  margin-top: 15px;
-  margin-left: 15px;
+  margin-top: 12px;
+  margin-left: 18px;
 }
 
 .button_chat_glove button {
@@ -82,7 +82,7 @@
   padding: 10px;
   background: var(--light-color);
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 1.5rem;
 }
 
@@ -125,7 +125,7 @@
 
 .chat-body {
   height: 450px;
-  width: 400px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   padding: 8px 10px;
@@ -207,7 +207,7 @@
 .chatbot-message {
   width: 100%; 
   padding: 20px;
-  background: #65b492;
+  background: #036935;
   color: var(--light-color);
   align-self: flex-start;
   border-radius: 15px 15px 15px 3px!important;
@@ -246,10 +246,14 @@
   font-size: 13px;
 }
 
-.display-none {
+.disNo {
   display: none;
 }
 
-.display-block {
+.disBlo {
   display: block;
+}
+
+.text-center {
+  text-align: center;
 }

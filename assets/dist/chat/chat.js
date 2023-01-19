@@ -31,8 +31,8 @@
             'path'
         );
 
-        iconSVG.setAttribute('width', '40');
-        iconSVG.setAttribute('height', '40');
+        iconSVG.setAttribute('width', '30');
+        iconSVG.setAttribute('height', '30');
         iconSVG.setAttribute('fill', 'currentColor');
         iconSVG.setAttribute('class', 'bi bi-chat-left-dots-fill');
         iconSVG.setAttribute('viewBox', '0 0 16 16');
@@ -214,13 +214,12 @@
                 const btnOpcion = document.createElement('p');
                 btnOpcion.classList.add(`btn-opcion-${numero}`);
                 btnOpcion.textContent = `
-                    ${numero}.  ${opcion}
+                    ${numero}: ${opcion}
                 `;
 
                 opcionDiv.appendChild(btnOpcion);
                 colOpciones.appendChild(opcionDiv);
                 rowOpciones.appendChild(colOpciones);
-                // console.log(numero, opcion)
                 return;
             })
             return f;
@@ -228,14 +227,7 @@
 
         opcionesPrincipales(chatBody).scrollIntoView();
         chatInfo.appendChild(opcionesContent);
-
-        // // Escribe una opcion
-        // const elejirOpcion = document.createElement('p');
-        // elejirOpcion.classList.add('titulo__info', 'text-center');
-
-        // elejirOpcion.textContent = 'Escribe un número';
         
-        // chatInfo.appendChild(elejirOpcion);
     }
 
     /** Chat Footer ------------------------------------------------------*/
@@ -280,45 +272,51 @@
     renderChat();
 
     /** animation Glove-Container */
-    function renderContentChat() {
+    function animationContainer() {
         const chat = document.querySelector('#chat');
-        const exit = document.querySelector('.exit'); 
+        const salir = document.querySelector('.exit'); 
         const glove = document.querySelector('.chat__glove');
         const options = document.querySelector('.chat__info');
+        const displayNone = 'disNo';
+        const displayBlock = 'disBlo';
+        const none = 'none';
+        const block = 'block'
 
-        chat.classList.add('display-none');
-        options.classList.add('display-none');
+        chat.classList.add(displayNone);
+        options.classList.add(displayNone);
+
     
         
         glove.addEventListener('click', glovechat => {
+            const addChat = document.querySelector('#chat');
             glovechat.preventDefault();
-
-            // const chat = document.querySelector('#chat');
-            // chat.classList.add('display-block')
+            addChat.style.display = block;
             
-            if(chat.classList.add('display-block')){
-                glove.classList.add('display-none');
+            if(addChat.style.display = block){
+                glove.style.display = none;
             }
     
             setTimeout(()=> {
-                options.classList.remove('display-none');
-                // options.classList.add('display-block');
+                options.classList.remove(displayNone);
+                options.classList.add(displayBlock);
             },1000)
         })
         
-        exit.addEventListener('click', event =>{       
+        salir.addEventListener('click', event =>{
+            const removeChat = document.querySelector('#chat');
+        
             event.preventDefault();
-            chat.style.display = 'none';
+            removeChat.style.display = none;
             
-            if (chat.style.display = 'none') {
-                glove.classList.add('display-block') 
+            if (removeChat.style.display = none) {
+                glove.style.display = block; 
             } else {
-                glove.style.display = 'none'; 
+                glove.style.display = none; 
             }
         
         }); 
     }
-    renderContentChat();
+    animationContainer();
 
     /** Select Options */
     function selectOptions() {
@@ -351,6 +349,15 @@
             if (type !== "user") {
             className = "chatbot-message";
             }
+            
+            // const fistChildValue = ()=> {
+            //     const child = document.querySelector('.chatbot-message');
+            //     const childValue = child ? child.value : '';
+            //     childValue.text
+            //     console.log(childValue)
+            // }
+
+            // fistChildValue();
 
             messageEle.classList.add(className);
             messageEle.append(txtNode);
@@ -374,14 +381,14 @@
         const renderChatbotResponse = (userInput) => {
             const res = userInput;
 
-            if(res == 1 ) {
+            if(res == 1) {
                 renderMessageEle('Voluntariado 🦺');
 
                 listaVoluntariado.map(voluntariado => {
                     const {numero, opcion} = voluntariado;
                     
-                    renderMessageEle(`${numero} : ${opcion}`);
-                    console.log(`${numero} : ${opcion}`)
+                    renderMessageEle(`${numero} - ${opcion}`);
+                    // console.log(`${numero} - ${opcion}`)
                 })
                 
             } else if(res == 2 ) {
@@ -389,32 +396,32 @@
 
                 listaMarketing.map(marketing => {
                     const {numero, opcion} = marketing;
-                    renderMessageEle(`${numero} : ${opcion}`);
-                    console.log(`${numero} : ${opcion}`)
+                    renderMessageEle(`${numero} - ${opcion}`);
+                    console.log(`${numero} - ${opcion}`)
                 })
             } else if(res == 3) {
                 renderMessageEle('Adopta un árbol 🌱');
                 listaAdopta.map(adopta => {
                     const {numero, opcion} = adopta;
 
-                    renderMessageEle(`${numero} : ${opcion}`);
-                    console.log(`${numero} : ${opcion}`)
+                    renderMessageEle(`${numero} - ${opcion}`);
+                    console.log(`${numero} - ${opcion}`)
                 })
             } else if (res == 4) {
                 renderMessageEle('Bolsa de trabajo 👨‍👧');
                 listaBolsa.map(bolsa => {
                     const {numero, opcion} = bolsa;
 
-                    renderMessageEle(`${numero} : ${opcion}`);
-                    console.log(`${numero} : ${opcion}`)
+                    renderMessageEle(`${numero} - ${opcion}`);
+                    console.log(`${numero} - ${opcion}`)
                 })
             } else if (res == 5) {
                 renderMessageEle('Centinelas del Tiempo 📷');
                 listaCentinelas.map(centinelas => {
                     const {numero, opcion} = centinelas;
 
-                    renderMessageEle(`${numero} : ${opcion}`);
-                    console.log(`${numero} : ${opcion}`)
+                    renderMessageEle(`${numero} - ${opcion}`);
+                    console.log(`${numero} - ${opcion}`)
                 })
 
             } else if (res == 6 ) { // ------
@@ -427,8 +434,8 @@
                 listaDonar.map(donar => {
                     const {numero, opcion} = donar;
 
-                    renderMessageEle(`${numero} : ${opcion}`);
-                    console.log(`${numero} : ${opcion}`)
+                    renderMessageEle(`${numero} - ${opcion}`);
+                    console.log(`${numero} - ${opcion}`)
                 })
             } else if (res == 8 ) { // ------
                 renderMessageEle('Contacto ☎️');
@@ -436,8 +443,8 @@
                 listaContacto.map(contacto => {
                     const {numero, opcion} = contacto;
 
-                    renderMessageEle(`${numero} : ${opcion}`);
-                    console.log(`${numero} : ${opcion}`)
+                    renderMessageEle(`${numero} - ${opcion}`);
+                    console.log(`${numero} - ${opcion}`)
                 })
             } else if (res == 9 ) { // ------
                 renderMessageEle('Eventos y convocatorias 📝');
@@ -445,8 +452,8 @@
                 listaEventos.map(eventos => {
                     const {numero, opcion} = eventos;
 
-                    renderMessageEle(`${numero} : ${opcion}`);
-                    console.log(`${numero} : ${opcion}`)
+                    renderMessageEle(`${numero} - ${opcion}`);
+                    console.log(`${numero} - ${opcion}`)
                 })
             } else {
                 renderMessageEle('Ingresa una opcion valida');
@@ -488,4 +495,106 @@
 
     }
     selectOptions()
+
+    // /** Chat Response */
+    // function chatResponse() {
+    //     const chatBody = document.querySelector(".chat-body");
+    //     const txtInput = document.querySelector("#txtInput");
+    //     const send = document.querySelector(".send");
+        
+    //     //*  Event Listeners */
+    //     // Bloquear el elemento .send si txtInput == ""
+    //     send.addEventListener("click", () => {
+    //         return txtInput.value!=="" 
+    //         ? renderUserMessage() 
+    //         : false;
+    //     });
+
+        
+    //     // Bloquear tecla enter si txt.value == ""
+    //     txtInput.addEventListener("keyup", (event) => {
+    //         return event.keyCode === 13 && txtInput.value!=="" 
+    //         ? renderUserMessage() 
+    //         : false;
+    //     });
+    //     // *** ------------------------------*/
+
+    //     //* Asignar los elementos a imprimir en html */
+    //     const renderMessageEle = (txt, type) => {
+    //         let className = "user-message";
+    //         const messageEle = document.createElement("div");
+    //         const txtNode = document.createTextNode(txt);
+
+    //         if (type !== "user") {
+    //         className = "chatbot-message";
+    //         }
+
+    //         messageEle.classList.add(className);
+    //         messageEle.append(txtNode);
+    //         chatBody.append(messageEle);
+    //     };
+    //     // *** ------------------------------*/
+        
+
+    //     //* Renderizar el mensage del usuario  */
+    //     const renderUserMessage = () => {
+    //         const userInput = txtInput.value;
+    //         renderMessageEle(userInput, "user");
+    //         txtInput.value = "";
+
+    //         setTimeout(() => {
+    //         renderChatbotResponse(userInput);
+    //         setScrollPosition();
+    //         }, 1000);
+    //     };
+    //     // *** ------------------------------*/
+
+        
+    //     //* Renderizar el mensaje del "Bot"  */
+    //     const renderChatbotResponse = (userInput) => {
+    //         const res = getChatbotResponse(userInput);
+    //         renderMessageEle(res);
+    //     };
+    //     // *** ------------------------------*/
+
+        
+    //     // Enviar "Ingresa un número" si listaOpciones[userInput] === undefined || false
+    //     // ** Response chat     */ 
+    //     const getChatbotResponse = (userInput) => {
+    //         // return listaOpciones[userInput] === undefined || false
+    //         // ? "Ingresa un número"
+    //         // : listaOpciones[userInput]
+            
+    //         const numero = listaOpciones.find(listaOpcion => { listaOpcion.numero == userInput});
+            
+    //         if(numero) {
+    //             console.log(listaOpciones);
+    //             numero = '';
+    //             return console.log(numero);
+    //         } else {
+    //             listaOpciones.map(listaOpcion => {
+    //                 const {opcion} = listaOpcion;
+    
+    //                 return console.log(opcion);
+    //             })
+    //         }
+    //     };
+
+    //     // *** ------------------------------*/
+     
+    //     //* Scroll del Chat  */ 
+    //     const setScrollPosition = () => {
+    //         if (chatBody.scrollHeight > 0) {
+    //         chatBody.scrollTop = chatBody.scrollHeight;
+    //         }
+    //     };
+    // }
+
+    // chatResponse();
+
+
+    const letras = 'Se presenta modelo de diversidad cultural y productiva de los Pueblos Indígenas Otomíes y Zapoteco en la Asamblea General del FSC® en Bali, Indonesia.'
+    console.log(`Los caracteres son ${letras.length}`);
 })();
+
+
