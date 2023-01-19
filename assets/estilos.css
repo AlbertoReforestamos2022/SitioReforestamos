@@ -1824,4 +1824,5 @@ a.active {
     .calendar-border {
       border: 1.5px solid var(--verdeArbol);
       padding: 5px;
+      border-radius: 10px;
     }
